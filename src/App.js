@@ -13,6 +13,16 @@ function App() {
     })
   }
   useEffect(() => {
+    var todoInfo = JSON.parse(localStorage.getItem('todos'))
+    if (todoInfo)
+    {
+      dispatch({
+        type: 'SHOW_TODOS',
+        todos: todoInfo
+      })
+    }
+  },[])
+  useEffect(() => {
     localStorage.setItem('todos',JSON.stringify(todos))
   }, [todos])
   return (
