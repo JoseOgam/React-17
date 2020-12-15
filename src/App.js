@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import ListTodos from "./components/ListTodos";
 import todosReducer from "./store/todosReducer";
 const { default: AddTodos } = require("./components/AddTodo");
@@ -12,6 +12,9 @@ function App() {
       title
     })
   }
+  useEffect(() => {
+    localStorage.setItem('todos',JSON.stringify(todos))
+  }, [todos])
   return (
     <div className="App">
       <h1>React Todo</h1>
