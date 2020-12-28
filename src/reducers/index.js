@@ -1,4 +1,4 @@
-const todosReducer = (state, action) => {
+const rootReducer = (state, action) => {
     switch (action.type)
     {
         case 'SHOW_TODOS':
@@ -11,4 +11,4 @@ const todosReducer = (state, action) => {
         return state    
     }
 }
-export default todosReducer
+export default rootReducer
