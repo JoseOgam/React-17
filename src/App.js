@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from "react";
 import ListTodos from "./components/ListTodos";
-import todosReducer from "./store/todosReducer";
+import todosReducer from "./redux/reducers/index";
 const { default: AddTodos } = require("./components/AddTodo");
 
 
