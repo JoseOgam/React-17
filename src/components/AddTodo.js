@@ -1,6 +1,13 @@
 import { useState } from "react"
+import { connect } from "react-redux"
+import {addTodos} from '../redux/actions/index'
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addTodos: todos =>dispatch(addTodos(todos))
+    }
+}
 
-const AddTodos = (props) => {
+const ConnectedForm = (props) => {
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
 
@@ -25,5 +32,5 @@ const AddTodos = (props) => {
         </div>
     )
  }
-
+const AddTodos = connect(null,mapDispatchToProps)(ConnectedForm)
 export default AddTodos
