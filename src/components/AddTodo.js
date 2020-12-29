@@ -32,5 +32,5 @@ const ConnectedForm = (props) => {
         </div>
     )
  }
-const AddTodos = connect(null,mapDispatchToProps)(ConnectedForm)
+const AddTodos = connect(null, mapDispatchToProps)(ConnectedForm)
 export default AddTodos
