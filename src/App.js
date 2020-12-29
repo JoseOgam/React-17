@@ -1,14 +1,21 @@
 import { useEffect, useReducer } from "react";
+import { connect } from "react-redux";
 import ListTodos from "./components/ListTodos";
+import { removeTodo } from "./redux/actions";
 import todosReducer from "./redux/reducers/index";
 const { default: AddTodos } = require("./components/AddTodo");
 
+const mapStateToProps = (state) => {
+  return {
+    todos: state.todos
+  }
+}
 
-function App() {
+function ConnectedApp() {
   const [todos, dispatch] = useReducer(todosReducer, [])
   const remove = (title) => {
-    dispatch({
-      type: 'REMOVE_TODOS',
+    removeTodo({
+      type: removeTodo,
       title
     })
   }
@@ -33,5 +40,5 @@ function App() {
     </div>
   );
 }
-
+const App = connect(mapStateToProps)(ConnectedApp)
 export default App;
