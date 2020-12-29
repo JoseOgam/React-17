@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { connect } from "react-redux"
-import {addTodos} from '../redux/actions/index'
+import { addTodos } from '../redux/actions/index'
+
 const mapDispatchToProps = (dispatch) => {
     return {
         addTodos: todos =>dispatch(addTodos(todos))
@@ -13,8 +14,8 @@ const ConnectedForm = (props) => {
 
     var addTodo = (evt) => {
         evt.preventDefault();
-        props.dispatch({
-            type: 'ADD_TODOS',
+        props.addTodos({
+            type: addTodos,
             title,
             body
         })

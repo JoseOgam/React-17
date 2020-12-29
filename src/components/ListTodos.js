@@ -8,7 +8,11 @@ const mapStateToProps = (state) => {
 const connectListTodos = ({todos}) => (
     <ul>
            { todos.map((todo) => (
-             <li key={todo.title} >{todo.title}</li>
+               
+               <div>
+                   <li key={ todo.title } >{ todo.title }</li>
+                   <p key={todo.body}>{ todo.body }</p>
+               </div>
         ))}
     </ul>
     
