@@ -1,22 +1,24 @@
 import { connect } from "react-redux"
-// import Todo from "./ todo"
+import Todo from "./ todo"
 
 const mapStateToProps = (state) => {
     return { todos: state.todos}
 }
 
-const connectListTodos = ({todos}) => (
-    <ul>
-           { todos.map((todo) => (
+const connectListTodos = ({ todos }) => {
+    return (
+           <div>
+            { todos.map((todo,index) => {
                
-               <div>
-                   <li key={ todo.title } >{ todo.title }</li>
-                   <p key={todo.body}>{ todo.body }</p>
-               </div>
-        ))}
-    </ul>
-    
+                return (
+                
+                <Todo todo={ todo } key={todo.title} index={index}/>
+            )
+                
+            }) }
+          </div>
     )
+}
 
  
  const ListTodos = connect(mapStateToProps)(connectListTodos)
