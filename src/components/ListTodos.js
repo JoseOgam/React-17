@@ -5,7 +5,7 @@ const mapStateToProps = (state) => {
     return { todos: state.todos}
 }
 
-const connectListTodos = ({ todos,props }) => {
+const connectListTodos = ({ todos},props) => {
     return (
            <div>
             { todos.map((todo,index) => {
